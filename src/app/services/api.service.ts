@@ -25,7 +25,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getSubjects(): Observable<Subject[]> {
-    return this.http.get<Subject[]>(`${this.apiUrl}/subjects`);
+    return this.http.get<Subject[]>(`${this.apiUrl}/subjects`, { withCredentials: true });
   }
 
   calculateGpa(data: { firstName: string; lastName: string; scores: { [key: number]: number } }): Observable<StudentRecord> {
@@ -33,6 +33,6 @@ export class ApiService {
   }
 
   getRecords(): Observable<StudentRecord[]> {
-    return this.http.get<StudentRecord[]>(`${this.apiUrl}/records`);
+    return this.http.get<StudentRecord[]>(`${this.apiUrl}/records`, { withCredentials: true });
   }
 }
