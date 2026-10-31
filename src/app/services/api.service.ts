@@ -20,7 +20,7 @@ export interface StudentRecord {
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://gpa-back-iw0fz3vh7-acme-ebc6.vercel.app/api';
 
   constructor(private http: HttpClient) {}
 
